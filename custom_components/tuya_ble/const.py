@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from homeassistant.backports.enum import StrEnum
 from tuya_iot import TuyaCloudOpenAPIEndpoint
 from typing_extensions import Final
+import re
 
 DOMAIN: Final = "tuya_ble"
 
@@ -30,8 +31,9 @@ SMARTLIFE_APP = "smartlife"
 TUYA_SMART_APP = "tuyaSmart"
 
 TUYA_API_DEVICES_URL: Final = "/v1.0/users/%s/devices"
-TUYA_API_FACTORY_INFO_URL: Final = "/v1.0/iot-03/devices/factory-infos?device_ids=%s"
+TUYA_API_FACTORY_INFO_URL: Final = "/v1.0/devices/factory-infos?device_ids=%s"
 TUYA_FACTORY_INFO_MAC: Final = "mac"
+TUYA_FACTORY_INFO_MAC_FORMAT: Final = re.compile(r"(?:[0-9A-Fa-f]{2}\:){5}(?:[0-9A-Fa-f]{2})")
 
 BATTERY_STATE_LOW: Final = "low"
 BATTERY_STATE_NORMAL: Final = "normal"

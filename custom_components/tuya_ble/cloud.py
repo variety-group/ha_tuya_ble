@@ -56,6 +56,7 @@ from .const import (
     TUYA_API_DEVICES_URL,
     TUYA_API_FACTORY_INFO_URL,
     TUYA_FACTORY_INFO_MAC,
+    TUYA_FACTORY_INFO_MAC_FORMAT,
     CONF_ACCESS_ID,
     CONF_ACCESS_SECRET,
     CONF_AUTH_TYPE,
@@ -191,10 +192,13 @@ class HASSTuyaBLEDeviceManager(AbstaractTuyaBLEDeviceManager):
                     if fi_response_result and len(fi_response_result) > 0:
                         factory_info = fi_response_result[0]
                         if factory_info and (TUYA_FACTORY_INFO_MAC in factory_info):
-                            mac = ":".join(
-                                factory_info[TUYA_FACTORY_INFO_MAC][i : i + 2]
-                                for i in range(0, 12, 2)
-                            ).upper()
+                            if TUYA_FACTORY_INFO_MAC_FORMAT.match(factory_info[TUYA_FACTORY_INFO_MAC]):
+                                mac = factory_info[TUYA_FACTORY_INFO_MAC].upper()
+                            else:
+                                mac = ":".join(
+                                    factory_info[TUYA_FACTORY_INFO_MAC][i : i + 2]
+                                    for i in range(0, 12, 2)
+                                ).upper()
                             item.credentials[mac] = {
                                 CONF_ADDRESS: mac,
                                 CONF_UUID: device.get("uuid"),
