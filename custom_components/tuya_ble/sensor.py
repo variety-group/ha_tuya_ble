@@ -148,7 +148,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
     ),
     "jtmspro": TuyaBLECategorySensorMapping(
         products={
-            "bfe700vfnodpt4ec":  # Raycube K7 Pro+
+            "xicdxood":  # Raycube K7 Pro+
             [
                 TuyaBLESensorMapping(
                     dp_id=21, # Requires more testing
