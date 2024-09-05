@@ -179,7 +179,7 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
     ),
     "jtmspro": TuyaBLECategorySelectMapping(
         products={
-            "bfe700vfnodpt4ec":  # Raycube K7 Pro+
+            "xicdxood":  # Raycube K7 Pro+
             [
                 TuyaBLESelectMapping(
                     dp_id=31,
