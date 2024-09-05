@@ -32,6 +32,9 @@
     "button": {
       "push": {
         "name": "Push"
+      },
+      "ble_unlock_check": {
+        "name": "Unlock"
       }
     },
     "number": {
@@ -70,6 +73,12 @@
       },
       "countdown_duration_z2": {
         "name": "Irrigation duration - Zone 2"
+      },
+      "beep_volume": {
+          "name": "Lock Volume"
+      },
+      "language": {
+          "name": "Lock Language"
       }
     },
     "select": {
@@ -168,6 +177,15 @@
       },
       "use_time_z2": {
           "name": "Last irrigation time - Zone 2"
+      },
+        "unlock_fingerprint": {
+            "name": "Last used Fingerprint"
+        },
+        "unlock_card": {
+            "name": "Last used Card"
+        },
+        "unlock_password": {
+            "name": "Last used Password"
       }
     },
     "switch": {
